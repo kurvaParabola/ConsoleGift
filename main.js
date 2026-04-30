@@ -44,12 +44,27 @@ const stages = [
                 makin banyak hal yang perlu di pikir dan persiapkan. 
             </p>
             <p>
+                beberapa waktu lalu, postingan kkn imel sempet lewat deh bahkan sempet fyp video 
+                imel main ama anak sd itu.. lucu hihi. gimana imel pengalaman kkn nyaa? keliatan 
+                seruu bgt.. sharing dong ahahaha.
+            </p>
+            <div class="stats-container">
+                <p style="font-size: 0.8rem; margin-bottom: 5px;">seberapa seru KKN kemarin?</p>
+                <div class="slider-wrapper">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="stress-slider" oninput="updateSliderVal(this.value)">
+                    <span id="slider-val">50%</span>
+                </div>
+                <p id="slider-response" style="font-size: 0.9rem; font-style: italic; color: #646cc3; margin-top: 5px;"></p>
+            </div>
+            <p>
                 anyway, damar ga akan singgung entitas inisial 'S'.. damar cuma berharap semoga 
                 imel dilancarkan dalam segala proses penyusunan si 'S' itu. boleh santai tapi 
                 jangan lalaii.. boleh buru buru tapi jangan memaksakan diri yaa.. doesn't have 
                 to be perfect.. it just has to be done. SEMANGAT !! 
             </p>
-
+            <div class="fire-ritual-container">
+                <button class="fire-btn" onclick="triggerFireRain()">kasih menyala 🔥</button>
+            </div>
         `
     },
     {
@@ -58,7 +73,7 @@ const stages = [
             <p>
                 selama perjalanan kuliah imel.. pasti dalam prosesnya ada cape, ada kesal, ada 
                 tangis yang mungkin imel sendiri ga pernah ungkapkan. tapi damar selalu inget 
-                pesan imel <b>apa yang menjadi takdir mu tidak akan pernah menjadi milik orang lain</b>
+                pesan imel <i><b>apa yang menjadi takdir mu tidak akan pernah menjadi milik orang lain</b></i>
                 selalu pegang ituu yaa.. damar yakin segala lelah imel selama ini pasti akan 
                 terbayarkaan hihi ^^
             </p>
@@ -66,7 +81,7 @@ const stages = [
                 damar ngerti bgt di umur umur segini tuh kalo kata orang mah "quarter life crisis" 
                 ceunah.. kadang bikin kita unmotivated mau ngelakuin apa apa. rasanya kaya bingung.. 
                 kehilangan arah. tapi Imel harus tahu, perasaan itu manusiawi bgt dan bukan berarti 
-                Imel gagal atau jalan di tempat. justru tanda imel lagi berprosess.. pelan pelan yaa, 
+                imel gagal atau jalan di tempat. justru tanda imel lagi berprosess.. pelan pelan yaa, 
                 alloh pasti udah siapin pathway terbaik untuk imel. kata orang teh <b>hidup bukanlah ajang 
                 balapan</b> satu satunya yang perlu imel jadikan rival adalah diri imel hari kemarin dan kemarinnya lagii
             </p>
@@ -81,7 +96,18 @@ const stages = [
                 oleh karena itu, damar mau mastiin satu hal.. <br>
                 imel percaya kan dengan diri imel? 
             </p>
-
+            <div class="radio-decision-container">
+                <label class="radio-option">
+                    <input type="radio" name="belief" value="yes" onclick="confirmBelief()">
+                    <span class="custom-radio"></span>
+                    <span class="radio-label">YES, opkross!</span>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="belief" value="yes" onclick="confirmBelief()">
+                    <span class="custom-radio red-radio"></span>
+                    <span class="radio-label red-text">sama aja cuma warna merah</span>
+                </label>
+            </div>
         `
     },
     {
@@ -205,6 +231,8 @@ function nextStage() {
 
         if (currentStage === 0){
             console.log("Waiting for wishing");
+        } else if (currentStage === 1) {
+            console.log("Waiting for fire ritual..."); 
         } else {
             setTimeout(() => {
                 if (messageContainer.scrollHeight <= messageContainer.clientHeight) {
@@ -218,7 +246,7 @@ function nextStage() {
         currentStage++;
 
         if (currentStage === stages.length) {
-            nextBtn.innerText = "click here !"; 
+            nextBtn.innerText = "game click here !"; 
             
             nextBtn.onclick = function() {
                 window.open("https://kurvaparabola.github.io/MiniGame-Bunny/", "_blank"); 
@@ -234,6 +262,7 @@ function sendWishRitual() {
     const successMsg = document.getElementById('wish-success-msg');
     const nextBtn = document.getElementById('next-btn');
     const inputVal = document.getElementById('imel-wish').value;
+    const messageContainer = document.getElementById('message-container');
 
     if (inputVal.trim() === "") {
         alert("isi dulu doanya ya, imel!");
@@ -258,4 +287,84 @@ function sendWishRitual() {
             }
         }, 100);
     }, 1000);
+}
+
+function updateSliderVal(val) {
+    document.getElementById('slider-val').innerText = val + "%";
+    const response = document.getElementById('slider-response');
+    
+    if (val > 80) {
+        response.innerText = "wah fiks ini mah seru parah!";
+    } else if (val > 50) {
+        response.innerText = "keliatan bgt sih imel enjoy bgt di videonya, seru yaa!";
+    } else if (val > 20) {
+        response.innerText = "seru tapi pasti cape bgt ya ngurus bocil-bocil SD? ahaha";
+    } else {
+        response.innerText = "masa sih cuma segini? padahal di video keliatannya seru bgt hmm";
+    }
+}
+
+function triggerFireRain() {
+    const nextBtn = document.getElementById('next-btn');
+    const consoleBody = document.querySelector('.console-body');
+    const messageContainer = document.getElementById('message-container');
+
+    if (consoleBody) {
+        consoleBody.classList.add('shake-anim');
+        setTimeout(() => consoleBody.classList.remove('shake-anim'), 500);
+    }
+
+    const rect = messageContainer.getBoundingClientRect();
+    
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const fire = document.createElement('div');
+            fire.innerText = '🔥';
+            fire.style.cssText = `
+                position: fixed;
+                left: ${rect.left + Math.random() * rect.width}px;
+                top: ${rect.top - 50}px;
+                font-size: 2.5rem;
+                z-index: 9999;
+                pointer-events: none;
+                transition: transform 2s linear, opacity 2s linear;
+            `;
+            
+            document.body.appendChild(fire);
+
+            setTimeout(() => {
+                fire.style.transform = `translateY(${rect.height + 150}px) rotate(${Math.random() * 360}deg)`;
+                fire.style.opacity = '0';
+            }, 50);
+
+            setTimeout(() => fire.remove(), 2500);
+        }, i * 100);
+    }
+
+    setTimeout(() => {
+        if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            nextBtn.style.animation = "fadeInButton 0.5s forwards";
+        }
+    }, 3000);
+}
+
+function confirmBelief() {
+    const nextBtn = document.getElementById('next-btn');
+    
+    // Feedback visual: Semua opsi berubah jadi positif
+    const allLabels = document.querySelectorAll('.radio-label');
+    allLabels.forEach(label => {
+        if(label.classList.contains('red-text')) {
+            label.innerText = "harus percaya!"; 
+        }
+    });
+
+    // Munculkan tombol NEXT dengan delay halus
+    setTimeout(() => {
+        if (nextBtn) {
+            nextBtn.classList.remove('hidden');
+            nextBtn.style.animation = "fadeInButton 0.5s forwards";
+        }
+    }, 400);
 }

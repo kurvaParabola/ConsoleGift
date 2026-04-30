@@ -308,3 +308,196 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+.stats-container {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #646cc3;
+    border-radius: 5px;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 8px;
+    background: rgba(100, 108, 195, 0.2);
+    outline: none;
+    border-radius: 5px;
+}
+
+/* Bulatan Slider (Thumb) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #646cc3;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#slider-val {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    min-width: 40px;
+}
+
+.fire-ritual-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding-bottom: 10px;
+}
+
+.fire-btn {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    color: white;
+    border: none;
+    font-family: 'VT323', monospace; /* Tetap pakai font pixel kamu */
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 4px 0 #b33000; /* Efek tombol timbul ala game jadul */
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.fire-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #b33000;
+}
+
+.shake-anim {
+    animation: shake 0.1s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    25% { transform: translate(-2px, 0px) rotate(0.5deg); }
+    50% { transform: translate(1px, -1px) rotate(-0.5deg); }
+    75% { transform: translate(-1px, 1px) rotate(0deg); }
+    100% { transform: translate(1px, -1px) rotate(0.5deg); }
+}
+
+.radio-decision-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-family: 'VT323', monospace;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 8px;
+}
+
+/* Sembunyikan radio asli */
+.radio-option input {
+    display: none;
+}
+.radio-decision-container {
+    display: flex;
+    flex-direction: column; /* Membuat posisi atas-bawah */
+    align-items: flex-start; /* Rata kiri agar rapi */
+    gap: 12px; /* Jarak antar pilihan */
+    margin-top: 15px;
+    padding-left: 10px; /* Sedikit indent agar tidak terlalu mepet pinggir */
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.radio-option input {
+    display: none;
+}
+
+/* Label teks dibuat lebih kecil */
+.radio-label {
+    font-family: 'VT323', monospace;
+    font-size: 0.9rem; /* Ukuran lebih kecil dari paragraf biasa */
+    line-height: 1;
+}
+
+/* Custom bullet radio disesuaikan ukurannya */
+.custom-radio {
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid #646cc3;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0; /* Mencegah radio gepeng */
+}
+
+.red-radio {
+    border-color: #ff4d4d !important;
+}
+
+.red-text {
+    color: #ff4d4d;
+}
+
+/* Titik tengah saat dipilih */
+.radio-option input:checked + .custom-radio::after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    background: #646cc3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-option input:checked + .red-radio::after {
+    background: #ff4d4d;
+}
+/* Custom bullet radio */
+.custom-radio {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #646cc3;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+/* Warna merah untuk opsi tipuan */
+.red-radio {
+    border-color: #ff4d4d !important;
+}
+
+.red-text {
+    color: #ff4d4d;
+}
+
+/* Efek saat dipilih (dot di tengah) */
+.radio-option input:checked + .custom-radio::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #646cc3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-option input:checked + .red-radio::after {
+    background: #ff4d4d;
+}
