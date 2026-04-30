@@ -1,0 +1,310 @@
+:root {
+    --bg-color: #dff6f9;       
+    --console-color: #a5d6a7;  
+    --screen-bg: #9ea7a6;      
+    --game-inner-bg: #f1f8e9;  
+    --accent: #8d6e63;         
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    font-family: 'VT323', monospace;
+}
+
+/* Kotak Utama Konsol */
+.console-body {
+    background-color: var(--console-color);
+    padding: 30px 15px 40px 15px;
+    border-radius: 20px 20px 40px 40px;
+    border: 4px solid #fff;
+    box-shadow: 
+        inset 5px 5px 10px rgba(255,255,255,0.5),
+        inset -5px -5px 10px rgba(0,0,0,0.1),
+        10px 10px 30px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Bingkai Layar */
+.screen-container {
+    border: 4px solid #888;
+    border-radius: 10px 10px 30px 10px;
+    padding: 10px;
+    background-color: var(--screen-bg);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.screen-inner {
+    background-color: var(--game-inner-bg);
+    border: 2px solid #555;
+    width: 280px; 
+    height: 350px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Teks Styling */
+.welcome-text { color: #646cc3; margin-bottom: 5px; font-size: 36px; }
+.sub-text { color: #646cc3; margin-bottom: 20px; font-size: 30px; }
+.loading-text { color: #8d6e63; font-size: 24px; margin-bottom: 10px; }
+
+/* Efek Garis TV Jadul */
+.scanlines {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(
+        to bottom, 
+        rgba(255,255,255,0) 50%, 
+        rgba(0,0,0,0.05) 50%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Tombol */
+.start-btn {
+    background-color: #8d6e63;
+    color: #fff;
+    font-family: 'VT323', monospace;
+    font-size: 2.5rem;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1), inset -4px -4px 0px rgba(0,0,0,0.2), inset 4px 4px 0px rgba(255,255,255,0.3);
+    transition: all 0.1s;
+}
+
+.start-btn:active {
+    transform: scale(0.95);
+    box-shadow: 1px 1px 0px rgba(0,0,0,0.1), inset 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Loading System */
+.hidden { display: none !important; }
+#loading-screen { width: 80%; }
+.loading-bar-container {
+    width: 100%;
+    height: 20px;
+    border: 2px solid #8d6e63;
+    padding: 2px;
+    margin-top: 10px;
+    background: #fff;
+}
+.loading-bar-fill {
+    height: 100%;
+    background-color: #a5d6a7; 
+    width: 0%;
+    transition: width 0.1s linear;
+}
+.counter-text { font-size: 3rem; color: #8d6e63; margin: 0; }
+
+.ui-panel {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.decoration-dots { font-size: 1.5rem; color: rgba(0,0,0,0.2); letter-spacing: 5px; }
+
+/* Styling Ucapan Ulang Tahun */
+.birthday-text {
+    font-size: 2.2rem;
+    color: #646cc3;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #fff;
+}
+
+.cake-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.cake-img {
+    width: 140px; /* Sesuaikan ukuran kue */
+    height: auto;
+    /* Animasi kue goyang sedikit (hover effect) */
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Tombol Next Kecil */
+.next-btn-small {
+    margin-top: 15px;
+    background-color: #8d6e63;
+    color: white;
+    border: none;
+    font-family: 'VT323', monospace;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+}
+
+.next-btn-small:active {
+    transform: translateY(2px);
+    box-shadow: none;
+}
+
+.wait-instruction {
+    color: #8d6e63;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-style: italic;
+    /* Animasi kedap-kedip tipis agar terasa interaktif */
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.message-img {
+    width: 100%;
+    max-width: 200px;  
+    height: auto;
+    display: block;
+    border-radius: 8px; 
+    margin: 10px 0; 
+    border: 2px solid var(--accent);
+    image-rendering: pixelated; 
+}
+
+#message-container {
+    margin-top: 15px;
+    height: 150px; 
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    display: block;
+    text-align: left;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    position: relative;
+}
+
+#message-container::-webkit-scrollbar {
+    display: none; 
+}
+
+#stage-message {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem; /* Sesuaikan ukuran agar pas di layar konsol */
+    color: #646cc3;
+    line-height: 1.4;  /* Kasih jarak antar baris biar enak dibaca */
+    word-wrap: break-word; /* Biar kata yang panjang gak bablas keluar layar */
+}
+
+.wish-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+#imel-wish {
+    width: 100%;
+    max-width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed #646cc3;
+    color: #646cc3;
+    font-family: 'VT323', monospace;
+    padding: 8px;
+    margin: 10px 0;
+    resize: none;
+    outline: none;
+
+    box-sizing: border-box;
+    display: block;
+}
+
+#imel-wish::-webkit-scrollbar {
+    display: none;
+}
+
+.send-btn {
+    background: #646cc3;
+    color: white;
+    border: none;
+    font-family: 'VT323', monospace;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: #4a51a3;
+    transform: scale(1.05);
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.body-accent-flower {
+    position: absolute;
+    width: 90px;          
+    height: auto;
+    top: -20px;         
+    right: -30px;         
+    z-index: 50;         
+    image-rendering: pixelated; 
+    pointer-events: none; 
+
+    filter: drop-shadow(2px 4px 0px rgba(0,0,0,0.1));
+}
+
+.game-link-btn {
+    background-color: #f5de0e !important; /* Warna kuning cerah */
+    color: #333 !important;
+    font-weight: bold;
+    box-shadow: 0 5px 0 #fcd165;
+    animation: bounce 0.5s infinite alternate; /* Biar tombolnya loncat-loncat */
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-5px); }
+}
+
+#wish-success-msg {
+    animation: fadeIn 1s ease-in;
+    padding-bottom: 20px; /* Memberi ruang agar scroll bar benar-benar mencapai bawah */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
