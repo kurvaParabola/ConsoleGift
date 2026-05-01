@@ -16,16 +16,16 @@ const stages = [
             <div id="wish-success-msg" class="hidden">
                 <p>AAMIIN YA RAB.. semoga alloh pelan pelan jawab doa imel yaa!</p>
                 <p>
-                    hari ini tepat 20 tahun lalu imel dilahirkan, dimana imel mulai
-                    perjalanan di dunia yang penuh halang rintang ini. Banyak hal yang
-                    udah imel lewatin hingga detik ini. semoga dengan bertambahnya usia
-                    imel.. imel menjadi pribadi yang makin baik kedepannya, selalu diberi
-                    kesehatan dan kebahagiaan yaa. semoga imel selalu diberi kemudahan 
-                    dan kelancaran juga keteguhan hati dalam menghadapi apapun yang Alloh 
-                    takdirkan untuk imel temui. terakhir, semoga diberikan kelancaran rezeki 
-                    yang sat set tag teg dan apa yang imel impikan dapat terwujud.. AAMIIN ^^
+                    hari ini tepat 20 tahun lalu imel dilahirkan, memulai perjalanan di dunia 
+                    yang penuh halang rintang ini. banyak kejutan manis dan pahit yang imel temui,
+                    banyak hal hebat yang udah imel lewati hingga detik ini. di usia awal 20 ini..
+                    semoga imel tumbuh menjadi pribadi yang lebih tangguh, selalu dipeluk kesehatan dan 
+                    dikelilingi kebaikan serta kebahagiaan. semoga alloh selalu menyertai imel, memberikan 
+                    keteguhan hati dalam menghadapi apapun kejutan kedepannya. juga semoga apapun yang imel 
+                    usahakan, segera di dekatkan dan apa yang sudah menjadi rezeki imel segera di sat set kan..
+                    AAMIIN ^^
                 </p>
-                <p></p>
+                <p>peluk hangat diri imel yaa.. bilang <i>bangga dan terimakasih telah bertahan</i></p>
             </div>
         `
     },
@@ -33,20 +33,20 @@ const stages = [
         title: `Chapter 2: <br> CURRENT STATS`,
         message: `
             <p>
-                how are you imel? <br>
+                how are u imel? <br>
                 sudah lama sekali ga denger kabar imel. semoga baik baik saja yaa.. 
                 walau pasti hidup ini tidak selalu baik baik sajaa tapi hari ini bahagiaa 
                 dulu yaa.. harus full senyum, enjoy your day!!
             </p>
             <p>
-                how's your life so far, imel? <br>
+                how's ur life so far, imel? <br>
                 as a medstud keliatan berat banget huhu.. apalagi sudah semester 6 ini 
                 makin banyak hal yang perlu di pikir dan persiapkan. 
             </p>
             <p>
-                beberapa waktu lalu, postingan kkn imel sempet lewat deh bahkan sempet fyp video 
-                imel main ama anak sd itu.. lucu hihi. gimana imel pengalaman kkn nyaa? keliatan 
-                seruu bgt.. sharing dong ahahaha.
+                beberapa waktu lalu, postingan kkn imel sempet lewat difyp.. liat video imel 
+                main ama anak sd itu.. lucu hihi. gimana imel pengalaman kkn nyaa? keliatan 
+                seruu bgt.. sharing dong seberapa seruu
             </p>
             <div class="stats-container">
                 <p style="font-size: 0.8rem; margin-bottom: 5px;">seberapa seru KKN kemarin?</p>
@@ -71,26 +71,30 @@ const stages = [
         title: `Chapter 3: <br> FINAL WORDS`,
         message: `
             <p>
-                selama perjalanan kuliah imel.. pasti dalam prosesnya ada cape, ada kesal, ada 
+                selama perjalanan kuliah.. pasti dalam prosesnya ada cape, ada kesal, ada 
                 tangis yang mungkin imel sendiri ga pernah ungkapkan. tapi damar selalu inget 
                 pesan imel <i><b>apa yang menjadi takdir mu tidak akan pernah menjadi milik orang lain</b></i>
-                selalu pegang ituu yaa.. damar yakin segala lelah imel selama ini pasti akan 
-                terbayarkaan hihi ^^
+                imel pegang ituu baik baik yaa.. damar yakin segala lelah imel selama ini pasti akan 
+                terbayar indah pada waktu yang tepat hihi ^^
             </p>
             <p>
-                damar ngerti bgt di umur umur segini tuh kalo kata orang mah "quarter life crisis" 
-                ceunah.. kadang bikin kita unmotivated mau ngelakuin apa apa. rasanya kaya bingung.. 
-                kehilangan arah. tapi Imel harus tahu, perasaan itu manusiawi bgt dan bukan berarti 
-                imel gagal atau jalan di tempat. justru tanda imel lagi berprosess.. pelan pelan yaa, 
-                alloh pasti udah siapin pathway terbaik untuk imel. kata orang teh <b>hidup bukanlah ajang 
-                balapan</b> satu satunya yang perlu imel jadikan rival adalah diri imel hari kemarin dan kemarinnya lagii
+                mungkin imel relate.. biasanya di umur umur segini tuh lagi <i>quarter life crisis</i>
+                yang bikin kita bingung kaya kehilangan arah.. kehilangan semangat.. demot gitu. tapi
+                is oke.. namanya juga hidup. itu bukan suatu tanda kalo gagal kok, cuma kadang emang untuk
+                menuju sesuatu yang besar tuh godaan setan nya kuat bgt.  
+            </p>
+            <p>
+                pelan pelan aja.. it's just dunya.. bukan ajang buat balapan dengan orang lain, satu satu nya 
+                yang perlu imel kalahin cuma versi imel di hari kemarin.. just follow the pathway that Alloh planned for u ^^
             </p>
             <p>
                 tetap semangat yaa.. masih banyak ombak ombak yang perlu imel terjang.. masih banyak 
-                badai yang perlu imel lalui. imel kuat dan imel mampu.. walau mungkin keluhan dan tangisan 
-                menyertainya, gapapa.. gapapa bgt kalau harus merasa ga baik baik aja.. ungkapin ajaa, ceritaa 
-                ke siapapun yang imel percaya, okay? remember this <b>i always support and be proud of u imel, 
-                everything that u have done. make ur family proud, especially urself</b>
+                badai yang perlu imel lalui. gaperlu jadi kuat teruss.. gapapa bgt sesekali merasa ga baik baik aja..
+                kita manusia biasa pasti ada kalanya di titik lemah.. keluh, kesah, tangis.. itu wajar bgt, jangan di tahan yaa
+                ada orang terdekat imel yang bisa di percaya.. ada alloh.. manapun yang bikin imel nyaman buat berbagi apa yang imel rasain
+            </p>
+            <p>
+                remember this <b>i always support and be proud of u imel, for everything that u have done. make ur family proud, especially urself</b>
             </p>
             <p>
                 oleh karena itu, damar mau mastiin satu hal.. <br>
