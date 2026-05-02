@@ -94,7 +94,11 @@ const stages = [
                 ada orang terdekat imel yang bisa di percaya.. ada alloh.. manapun yang bikin imel nyaman buat berbagi apa yang imel rasain
             </p>
             <p>
-                remember this <b>i always support and be proud of u imel, for everything that u have done. make ur family proud, especially urself</b>
+                remember this... <br>
+                masih banyak makanan yang bisa imel coba, masih banyak tempat tempat indah yang bisa imel kunjungi, banyak pemandangan indah yang 
+                bisa imel nikmati, mungkin juga alloh masih banyak menitipkan rezeki orang lain lewat imel.. so, tetap semangat yaa !! ^0^
+                <br>
+                <b>i always support and be proud of u imel, for everything that u have done. make ur family proud, especially urself</b>
             </p>
             <p>
                 oleh karena itu, damar mau mastiin satu hal.. <br>
