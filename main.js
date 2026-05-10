@@ -85,7 +85,7 @@ const stages = [
             </p>
             <p>
                 pelan pelan aja.. it's just dunya.. bukan ajang buat balapan dengan orang lain, satu satu nya 
-                yang perlu imel kalahin cuma versi imel di hari kemarin.. just follow the pathway that Alloh planned for u ^^
+                yang perlu imel kalahin cuma versi imel di hari kemarin.. focus on ur self, just follow the pathway that Alloh planned for u ^^
             </p>
             <p>
                 tetap semangat yaa.. masih banyak ombak ombak yang perlu imel terjang.. masih banyak 
@@ -133,6 +133,8 @@ const stages = [
                 one last thing.. <br>
                 thank u for being a big part of my happiness, imel <br>
                 see u future doctor ^^
+                <img src="bucket.png" alt="celebration" style="display: block; width: 100%; max-width: 200px; margin: 5px auto; text-align: center;">
+                little bucket of happiness for u hehe ^0^
             </p>
         `
     }
@@ -238,6 +240,7 @@ function nextStage() {
         nextBtn.classList.add('hidden');
 
         if (currentStage === 0){
+            const bgm = document.getElementById('bgm');
             console.log("Waiting for wishing");
         } else if (currentStage === 1) {
             console.log("Waiting for fire ritual..."); 
@@ -375,4 +378,34 @@ function confirmBelief() {
             nextBtn.style.animation = "fadeInButton 0.5s forwards";
         }
     }, 400);
+}
+
+function toggleMusic() {
+    const bgm = document.getElementById('bgm');
+    const muteBtn = document.getElementById('mute-btn');
+
+    if (bgm.paused) {
+        bgm.play();
+        btn.innerText = "🎵"; 
+        btn.style.opacity = "1";
+        btn.style.filter = "grayscale(0%)";
+    } else {
+        bgm.pause();
+        btn.innerText = "🎵"; 
+        btn.style.opacity = "0.5";
+        btn.style.filter = "grayscale(100%)"; 
+    }
+}
+
+function startExperience() {
+    const bgm = document.getElementById('bgm');
+    
+    // Langsung tembak play di sini, karena ini berasal dari klik user
+    bgm.play().then(() => {
+        bgm.pause();
+        bgm.currentTime = 0; // Pastikan mulai dari detik ke-0 nanti
+        bgm.volume = 0.2;    // Set volume idealmu
+    }).catch(error => console.log("Audio unlock failed:", error));
+
+    nextStage();
 }
