@@ -21,7 +21,7 @@ const stages = [
                     banyak hal hebat yang udah imel lewati hingga detik ini. di usia awal 20 ini..
                     semoga imel tumbuh menjadi pribadi yang lebih tangguh, selalu dipeluk kesehatan dan 
                     dikelilingi kebaikan serta kebahagiaan. semoga alloh selalu menyertai imel, memberikan 
-                    keteguhan hati dalam menghadapi apapun kejutan kedepannya. juga semoga apapun yang imel 
+                    keteguhan hati dalam menghadapi apapun kejutan kedepannya. juga apapun yang imel 
                     usahakan, segera di dekatkan dan apa yang sudah menjadi rezeki imel segera di sat set kan..
                     AAMIIN ^^
                 </p>
